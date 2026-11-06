@@ -1,7 +1,9 @@
 {
-  "paymentIntentId": "jx76va4d4k8r58n86kz0nj6pts8hps79",
-  "checkoutUrl": "https://www.velo-build.dev/pay/jx76va4d4k8r58n86kz0nj6pts8hps79",
+  "paymentIntentId": "jx76g9srb3hq8yd9rqghn3tyrh8hppmz",
+  "checkoutUrl": "https://www.velo-build.dev/pay/jx76g9srb3hq8yd9rqghn3tyrh8hppmz",
   "status": "created",
   "asset": "native",
-  "amount": "10.00"
+  "amount": "10.00",
+  "successUrl": "https://demopay-agent.vercel.app/?checkout=success",
+  "verifiedViaPublicApi": true
 }

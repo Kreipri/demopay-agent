@@ -9,7 +9,13 @@
 - Public repository: https://github.com/Kreipri/demopay-agent
 - Initial GitHub CI passed: https://github.com/Kreipri/demopay-agent/actions/runs/42306371335
 - Nine automated checks passed, including Velo signature tampering/staleness rejection and the RPC v30 event-decoding regression. Desktop/mobile browser checks passed after the evidence fix.
-- Vercel deployment is pending the owner's CLI authorization. No production URL is claimed yet.
+- Public Vercel deployment: https://demopay-agent.vercel.app
+- Logged-out desktop/mobile browser checks passed against the production URL. Production Vercel login protection was disabled as required for public judging; operator actions remain token-protected.
+- Production /api/health and /api/state passed. The live escrow balance was 17 XLM, pending collection was 0, and five confirmed transaction proofs were displayed.
+- Production Velo checkout creation and payment-status retrieval passed. The checkout return URL points to the public app. The recorded contribution is created, not paid.
+- Production access checks passed: unauthenticated payment requests return 401 and unsigned webhook deliveries return 400. Valid webhook signature verification is unit-tested; configuring a live Velo webhook signing secret is still pending.
+- Retrying the already-paid invoice through the deployed agent returned a hold decision and no transaction hash. No second payment was made.
+- The API is bundled from the monorepo TypeScript sources by scripts/build-api.mjs before deployment to avoid missing workspace modules in the serverless runtime.
 
 ## Event decoder compatibility
 

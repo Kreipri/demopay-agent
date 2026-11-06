@@ -1,5 +1,7 @@
 # Publish on your free Vercel account
 
+The project is now deployed at https://demopay-agent.vercel.app. The instructions below are for reproducing the setup. Production runtime settings are already configured except for the optional live webhook signing secret.
+
 No paid plan or real cryptocurrency is needed for this Testnet sandbox. Vercel usage remains subject to your account's free-plan limits; do not enable paid upgrades.
 
 1. Import the public repository https://github.com/Kreipri/demopay-agent into Vercel.
