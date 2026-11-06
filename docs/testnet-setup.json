@@ -1,0 +1,22 @@
+{
+  "network": "testnet",
+  "deviceHash": "78c61a806afd2ab4eb6b8ad51989f99cc8b6ce2c388896a34ed19cdcb56cbbeb",
+  "owner": "GDODRAANOLFVBY2WMIYNFKNNZJ7MUTV3X6WS2OE6WKMKLWILXDMS54A5",
+  "agent": "GALW35NIZWW4NARQCOEUN4KBSPD4GG7B5NJLE2EBPJL2P6PHE5NGUPH7",
+  "merchant": "GCMCSJFPJA3GG45TIPSZMBDYZP546FRY6PV2FF5VRKVVRFVQTTSBHSFP",
+  "startLedger": 5596135,
+  "transactions": [
+    {
+      "kind": "device.registered",
+      "hash": "3a8e341b343fda7dd62be93f9b3feb5d81ed0db5d1154cf553bf5e055425b320"
+    },
+    {
+      "kind": "agent.registered",
+      "hash": "1eb859aea6ddff6bc5dace343688aaf6fe659ab7dc178169966de73da2c02650"
+    },
+    {
+      "kind": "escrow.funded",
+      "hash": "f82427cb3e638e9f9b7f69a0f8bdc71439e60dab664a9cff4d243888263bf429"
+    }
+  ]
+}

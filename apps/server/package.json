@@ -1,0 +1,13 @@
+{
+  "name": "@demopay/server",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node --env-file-if-exists=../../.env --import tsx src/index.ts"
+  },
+  "dependencies": {
+    "@carts1024/velo-sdk": "1.0.0",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.0.0"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "network": "testnet",
+  "authorization": "6de41e8024a31e0d11ffead82251eeeb0a0e0b4f3bf5589e40d8546ad4c428c7",
+  "collection": "3871abd7997d9129dd4628975667f7b46d3acbbd81e04ee8680e3236d5ccd2cc",
+  "snapshot": {
+    "configured": true,
+    "live": true,
+    "proofs": [],
+    "veloConfigured": false,
+    "contracts": {
+      "deviceRegistry": "CAC4KOLHDLDYDWBOKXNKRN5KVHO56PLOIFXDLTBUWGVN6GVDEB7FQHU5",
+      "agentRegistry": "CCMZDSPTLX7IIJWCYEUM5DJUHOSOYSTHGK777S2TXZWEMC5ZZGPJ3EBV",
+      "paymentEscrow": "CC7EAW5FNJEDBS7THM5IT6XIOHO4AOYMLXT3KSZ3HWUIKEACTW7E5BFS"
+    },
+    "deviceHash": "78c61a806afd2ab4eb6b8ad51989f99cc8b6ce2c388896a34ed19cdcb56cbbeb",
+    "owner": "GDODRAANOLFVBY2WMIYNFKNNZJ7MUTV3X6WS2OE6WKMKLWILXDMS54A5",
+    "agent": "GALW35NIZWW4NARQCOEUN4KBSPD4GG7B5NJLE2EBPJL2P6PHE5NGUPH7",
+    "merchant": "GCMCSJFPJA3GG45TIPSZMBDYZP546FRY6PV2FF5VRKVVRFVQTTSBHSFP",
+    "balance": "17",
+    "pending": "0",
+    "cap": "5",
+    "expiresAt": "2026-11-13T22:32:57.000Z"
+  }
+}
