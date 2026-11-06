@@ -24,6 +24,23 @@ import {
 import type { Decision, RequestItem, Snapshot } from "@demopay/shared";
 import "./style.css";
 type Data = { requests: RequestItem[]; snapshot: Snapshot };
+type Checkout = { id: string; url: string; status?: string };
+function savedCheckout(): Checkout | null {
+  try {
+    const value = JSON.parse(
+      sessionStorage.getItem("demopay-checkout") ?? "null",
+    );
+    if (!value || typeof value.id !== "string" || typeof value.url !== "string")
+      return null;
+    const url = new URL(value.url);
+    return url.origin === "https://www.velo-build.dev" &&
+      url.pathname === `/pay/${value.id}`
+      ? { id: value.id, url: value.url }
+      : null;
+  } catch {
+    return null;
+  }
+}
 const explorer = (hash: string) =>
   `https://stellar.expert/explorer/testnet/tx/${hash}`;
 const shorten = (s?: string) =>
@@ -42,11 +59,7 @@ function App() {
     [token, setToken] = useState(
       () => sessionStorage.getItem("demopay-operator") ?? "",
     ),
-    [checkout, setCheckout] = useState<{
-      id: string;
-      url: string;
-      status?: string;
-    } | null>(null);
+    [checkout, setCheckout] = useState<Checkout | null>(savedCheckout);
   async function api(path: string, body?: unknown) {
     const res = await fetch(`/api${path}`, {
       method: body === undefined ? "GET" : "POST",
@@ -75,6 +88,13 @@ function App() {
   useEffect(() => {
     refresh().catch((e) => setError(e.message));
   }, []);
+  useEffect(() => {
+    if (checkout)
+      sessionStorage.setItem(
+        "demopay-checkout",
+        JSON.stringify({ id: checkout.id, url: checkout.url }),
+      );
+  }, [checkout]);
   async function task(name: string, fn: () => Promise<void>) {
     setBusy(name);
     setError("");

@@ -5,7 +5,7 @@
 - Dedicated Testnet wallet funding and SDK owner setup succeeded against the handbook's contract IDs.
 - The agent authorized 3 XLM and the merchant collected it. See testnet-proof.json.
 - Browser checks cover navigation, three contract explorer links, operator modal, desktop/mobile overflow and uncaught browser errors.
-- Live Velo checkout/status/webhook delivery awaits private project credentials. A missing key is not counted as a completed Velo integration.
+- Live Velo checkout creation and SDK status retrieval succeeded with the builder's private Testnet API key. Evidence: [velo-checkout-proof.json](velo-checkout-proof.json). The intent was `created` when checked; this is not a claim of completed payment. Hosted checkout completion and a delivered Velo webhook are still pending.
 - Public repository: https://github.com/Kreipri/demopay-agent
 - Initial GitHub CI passed: https://github.com/Kreipri/demopay-agent/actions/runs/42306371335
 - Nine automated checks passed, including Velo signature tampering/staleness rejection and the RPC v30 event-decoding regression. Desktop/mobile browser checks passed after the evidence fix.

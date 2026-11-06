@@ -1,0 +1,7 @@
+{
+  "paymentIntentId": "jx76va4d4k8r58n86kz0nj6pts8hps79",
+  "checkoutUrl": "https://www.velo-build.dev/pay/jx76va4d4k8r58n86kz0nj6pts8hps79",
+  "status": "created",
+  "asset": "native",
+  "amount": "10.00"
+}

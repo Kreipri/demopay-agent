@@ -69,6 +69,7 @@ Secrets are server-side only. No app endpoint accepts an arbitrary signing paylo
 - Checkout SDK call: [apps/server/src/velo.ts](apps/server/src/velo.ts#L17). Signature verification: [webhooks.verify](apps/server/src/velo.ts#L29).
 - Canonical status retrieval: [apps/server/src/app.ts](apps/server/src/app.ts#L143).
 - Live checkout needs a valid project Testnet API key, configured receiver and Velo Pay activation. Missing credentials disable checkout rather than fabricate a payment. Live Velo qualification is recorded in [docs/verification.md](docs/verification.md).
+- A real Testnet checkout was created and its status retrieved with the Velo SDK: [checkout evidence](docs/velo-checkout-proof.json). Its recorded status is `created`, not `paid`; completing the hosted checkout remains a separate step.
 
 ## Testnet proof
 
