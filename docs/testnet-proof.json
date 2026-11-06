@@ -5,7 +5,31 @@
   "snapshot": {
     "configured": true,
     "live": true,
-    "proofs": [],
+    "proofs": [
+      {
+        "kind": "device.registered",
+        "hash": "3a8e341b343fda7dd62be93f9b3feb5d81ed0db5d1154cf553bf5e055425b320"
+      },
+      {
+        "kind": "agent.registered",
+        "hash": "1eb859aea6ddff6bc5dace343688aaf6fe659ab7dc178169966de73da2c02650"
+      },
+      {
+        "kind": "escrow.funded",
+        "hash": "f82427cb3e638e9f9b7f69a0f8bdc71439e60dab664a9cff4d243888263bf429",
+        "amount": "20"
+      },
+      {
+        "kind": "payment.authorized",
+        "hash": "6de41e8024a31e0d11ffead82251eeeb0a0e0b4f3bf5589e40d8546ad4c428c7",
+        "amount": "3"
+      },
+      {
+        "kind": "payment.claimed",
+        "hash": "3871abd7997d9129dd4628975667f7b46d3acbbd81e04ee8680e3236d5ccd2cc",
+        "amount": "3"
+      }
+    ],
     "veloConfigured": false,
     "contracts": {
       "deviceRegistry": "CAC4KOLHDLDYDWBOKXNKRN5KVHO56PLOIFXDLTBUWGVN6GVDEB7FQHU5",

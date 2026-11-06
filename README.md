@@ -53,11 +53,12 @@ Secrets are server-side only. No app endpoint accepts an arbitrary signing paylo
 
 - SDK: **`@noirx402/agent-sdk` 0.3.0**, pinned in [packages/agent/package.json](packages/agent/package.json).
 - Contracts: `device_registry`, `agent_registry`, `payment_escrow`, pinned to the exact addresses in the supplied Builder Handbook; see [packages/shared/src/index.ts](packages/shared/src/index.ts).
-- Payment policy, preflight, authorization, collection and event queries: [packages/agent/src/index.ts](packages/agent/src/index.ts).
-- Owner initialization uses `execute` with `registerDevice`, `registerAgent` and `fundEscrow`: [scripts/setup-testnet.ts](scripts/setup-testnet.ts).
+- Live policy reads and decision context: [packages/agent/src/index.ts](packages/agent/src/index.ts#L134). Payment preflight and authorization: [agent execution](packages/agent/src/index.ts#L189). Merchant collection: [claim](packages/agent/src/index.ts#L214).
+- Owner initialization uses `execute` with `registerDevice`, `registerAgent` and `fundEscrow`: [scripts/setup-testnet.ts](scripts/setup-testnet.ts#L69).
 - Exact-amount business rules: [packages/agent/src/decide.ts](packages/agent/src/decide.ts).
 - No Noir contracts are redeployed, and no contract invocation is manually encoded outside the SDK. The Stellar SDK is used for key generation and the native XLM token ID.
 - The software UID is generated locally and hashed. NFC hardware is not required by the handbook.
+- RPC v30 removed a legacy success flag still expected by Noir 0.3.0. [The compatibility adapter](packages/agent/src/events.ts) supplies the flag for contract events to Noir's own decoder; [paymentProofs](packages/agent/src/index.ts#L55) independently checks each relevant transaction's successful receipt before treating it as evidence. No Noir contract call bypasses the SDK.
 
 ## Velo integration
 
@@ -65,8 +66,8 @@ Secrets are server-side only. No app endpoint accepts an arbitrary signing paylo
 - `checkout.sessions.create` creates a separate Testnet budget-contribution session.
 - `paymentIntents.retrieve` checks the canonical contribution status; a success-page redirect never counts as payment proof.
 - `Velo.webhooks.verify` verifies the raw body and signature. Duplicate deliveries have no money-moving effect because this receiver only acknowledges verified notifications; status is read from Velo.
-- SDK calls: [apps/server/src/velo.ts](apps/server/src/velo.ts).
-- HTTP handlers: [apps/server/src/app.ts](apps/server/src/app.ts).
+- Checkout SDK call: [apps/server/src/velo.ts](apps/server/src/velo.ts#L17). Signature verification: [webhooks.verify](apps/server/src/velo.ts#L29).
+- Canonical status retrieval: [apps/server/src/app.ts](apps/server/src/app.ts#L143).
 - Live checkout needs a valid project Testnet API key, configured receiver and Velo Pay activation. Missing credentials disable checkout rather than fabricate a payment. Live Velo qualification is recorded in [docs/verification.md](docs/verification.md).
 
 ## Testnet proof
