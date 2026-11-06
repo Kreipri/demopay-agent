@@ -5,7 +5,7 @@ One-line pitch: A constrained payment operations agent for Stellar fintech teams
 **Live website:** https://demopay-agent.vercel.app
 **Demo video (2 min):** To be recorded by the builder after deployment.
 **Pitch deck:** To be supplied by the builder. A talk track is in [docs/demo-script.md](docs/demo-script.md).
-**Team:** Solo builder — registered name and Discord handle to be completed before submission.
+**Team:** Solo builder — Discord: `biyaaaah` (registered name to be completed before submission).
 
 ## Problem
 

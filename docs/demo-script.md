@@ -16,5 +16,5 @@
 
 - Record and publish the video; add its URL to README.
 - Prepare a publicly viewable pitch deck; add its URL.
-- Fill registered name and Discord handle.
+- Fill registered name. Discord handle: `biyaaaah`.
 - Confirm the final public website, both SDK integrations and submission form before claiming readiness.
